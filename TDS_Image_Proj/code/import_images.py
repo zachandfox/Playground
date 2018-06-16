@@ -9,7 +9,7 @@ from PIL import Image
 import os
 import glob
 
-def import_images(input_directory):
+def import_images(directory):
     # Instantiate Search Parameters
     params = cv2.SimpleBlobDetector_Params()
     params.minThreshold = 10
@@ -30,12 +30,13 @@ def import_images(input_directory):
         detector = cv2.SimpleBlobDetector_create(params)
 
     # Load Images
-    imset = np.array([cv2.imread(i) for i in glob.glob(str(input_directory)+"*.jpg")])
+    imset = np.array([cv2.imread(i) for i in glob.glob(str(directory)+"*.jpg")])
 
     # Create Output folder
-    print(not os.path.exists(directory+"output"))
-    if (not os.path.exists(directory+"output")):
-      os.mkdir(str(directory)+"output")
+    print(not os.path.exists(str(directory)+"output"))
+    if (not os.path.exists(str(directory)+"output")):
+        os.mkdir(str(directory)+"output")  
+
 
     #Iterate process over set of images
     for i in range(len(imset)):
