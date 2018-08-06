@@ -102,3 +102,9 @@ ENV/
 
 #justmacthings
 .DS_Store
+
+# data folder
+/TDS_Image_Proj/data/
+
+# zip
+.zip
