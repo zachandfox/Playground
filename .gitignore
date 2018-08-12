@@ -108,3 +108,6 @@ ENV/
 
 # zip
 .zip
+
+# matlab files
+.mat
